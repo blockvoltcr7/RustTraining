@@ -2,20 +2,17 @@ use std::mem;
 
 fn main() {
 
-   //arithmetic
+    //bitwise
 
-    let mut a = 2+3*4;
+    let c = 1 | 2;
 
-    println!("{}", a);
+    println!("1|2 = {}", c);
 
-    a += 1;
-    println!("incremented = {}", a);
+    let x = 2;
+    let y = 3;
 
-    //rust does not support -- decrement ++ increment
-    // you must say a+1 or a-1 or a -= 1
-    //-= += *= /= &=
+    let bool = x<y;
 
-
-
+    println!("x is less than y : {}", bool)
 
 }
