@@ -1,27 +1,66 @@
 
+
+
+use std::io::stdin;
+
+enum State {
+    LOCKED,
+    FAILED,
+    UNLOCKED
+}
+
 fn main() {
 
+    let code = String::from("1234");
+    let mut state = State::LOCKED;
+    let mut entry = String::new();
 
-    let country_code = 1001;
 
-    let country = match country_code {
-        44 => "UK",
-        46 => "Sweden",
-        7 => "Russia",
-        1..=1000 => "unknown",
-        _ => "invalid"
-    };
+    //loop state
+    loop {
 
-    println!("the country with code {} is {}", country_code, country);
+        //match state
+        match state {
+            //start the state as locked
+            State::LOCKED => {
+                let mut input = String::new(); //create a new string for the input
+                match stdin().read_line(&mut input){ //take stdin entry from console and set as input
+                    Ok(_) => {
+                        entry.push_str(&input.trim_end()); //entry 1,2 etc appending value to the string
 
-    let x = true;
+                    }
+                    Err(_) => continue
+                }
 
-    //match is like an if, but the cool thing is that it can test a range of cases, almost like a switch case statement
-    let s = match x {
-        true => "yes",
-        false => "no"
-    };
+                //check if entry matches the code, if true then state is unlocked
+                if entry == code {
+                    state = State::UNLOCKED;
+                    continue;
+                }
 
-    println!("{}",x)
+                //check if code starts with something that is not valid
+                if !code.starts_with(&entry){
+                    //entry is 1234 but entered 125 then fail
+                    state = State::FAILED;
+                }
+            }
+
+            //failed case
+            State::FAILED => {
+                println!("FAILED!");
+                entry.clear();
+                state = State::LOCKED;
+                continue;
+            }
+
+            //success case
+            State::UNLOCKED => {
+                println!("UNLOCKED!");
+                return;
+            }
+
+        }
+    }
+
 
 }
