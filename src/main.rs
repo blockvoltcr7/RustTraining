@@ -1,25 +1,17 @@
 
 fn main() {
 
-    for x  in 0..11
-    {
-        if x == 3 {
-            continue;
-        }
 
-        if x == 8 {
-            break;
-        }
+    let country_code = 1001;
 
-        println!("{}", x)
+    let country = match country_code {
+        44 => "UK",
+        46 => "Sweden",
+        7 => "Russia",
+        1..=1000 => "unknown",
+        _ => "invalid"
+    };
 
-    }
-
-
-    //give me range from 30 and 40
-    for (position, y) in (0..41).enumerate(){
-        println!("{}: {}",position,y);
-    }
-
+    println!("the country with code {} is {}", country_code, country)
 
 }
