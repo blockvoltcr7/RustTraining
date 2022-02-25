@@ -12,6 +12,16 @@ fn main() {
         _ => "invalid"
     };
 
-    println!("the country with code {} is {}", country_code, country)
+    println!("the country with code {} is {}", country_code, country);
+
+    let x = true;
+
+    //match is like an if, but the cool thing is that it can test a range of cases, almost like a switch case statement
+    let s = match x {
+        true => "yes",
+        false => "no"
+    };
+
+    println!("{}",x)
 
 }
