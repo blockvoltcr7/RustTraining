@@ -1,22 +1,15 @@
+use std::mem;
+
 fn main() {
 
+    let c = 12345689; //i32 = 32bits = 4 bytes
 
-    let a: u8 = 255; // - u8 unsined integer, which means that the variable a can only be between 0 and 255, 0 to 2^N-1
+    println!("c = {}, takes up {} bytes", c, mem::size_of_val(&c));
 
+    //c has a reference sign infront if it because we want to know the bytes
 
-    println!("a = {}", a);
-
-    //all the variables you declare are immutable
-
-    // you have to be explicit about creating a variable that can be assigned to different values
-    //you have to use a keyword called 'mut' in front of the variable
+    //u8, u16, u32, u64, i8, i16, .... all used to declare integers
 
 
-    //i = signed: range of -128 to 127, so b can only hold within that range.
-    let mut b: i8 = 0;
-
-    b = 20;
-
-    println!("b = {}",b);
 
 }
