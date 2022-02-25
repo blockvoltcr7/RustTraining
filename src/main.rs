@@ -2,19 +2,22 @@
 fn main() {
 
 
-    let temp: u8 = 5;
+    let mut x = 1;
 
-    if temp > 25 {
-        println!("true temp is greater")
-    } else if temp < 25 {
-        println!("true temp is {} which is less than 25", temp)
-    }else{
-        println!("temp is neutral")
+    while x < 100{
+        x *= 2;
+        println!("x = {}", x);
     }
 
-    let day = if temp > 20 {"sunny"} else {"cloudy"};
-    println!("{}",day)
+    //other version of while loop called loop which is a 'while true'
 
+    let mut y = 1;
 
-
+    loop{
+        y*=2;
+        println!("y = {}", y);
+        if y == 1<<10 {  // << means to the power
+            break; // telling the program to break out of the loop when if statement is true
+        }
+    }
 }
