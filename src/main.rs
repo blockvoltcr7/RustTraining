@@ -2,12 +2,10 @@ use std::mem;
 
 fn main() {
 
-    let z: isize = 123;
-    let size_of_z = mem::size_of_val(&z);
-    println!(
-        "z = {}, takes up {} bytes, {}-bit OS",
-             z, size_of_z, size_of_z*8
-    );
+    let d: char = 'x'; //32 bit unicode char
+    //this char takes up 32 bits as a unicode character
+
+    println!("{} is a char, size = {} bytes",d, mem::size_of_val(&d));
 
 
 }
