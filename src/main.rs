@@ -1,11 +1,7 @@
 fn main() {
 
 
-    //enhanced string for loop
-
-    for word in "veni, vidi, vici".split(", ") {
-        assert!(word.starts_with("v"))
-    }
-    println!("passed")
+    let a: u8 = 255; // - u8 unsined integer, which means that the variable a can only be between 0 and 255
+    println!("{}", a)
 
 }
