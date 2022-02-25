@@ -1,11 +1,11 @@
 fn main() {
 
-    //operators == & !=
 
-    assert!("ONE".to_lowercase() == "one");
-    assert!("peanut".contains("nut"));
-    assert_eq!("   clean\n".trim(), "clean");
-    println!("pass");
+    //enhanced string for loop
 
+    for word in "veni, vidi, vici".split(", ") {
+        assert!(word.starts_with("v"))
+    }
+    println!("passed")
 
 }
