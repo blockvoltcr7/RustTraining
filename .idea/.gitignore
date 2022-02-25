@@ -4,3 +4,6 @@
 .iml
 .idea
 target/
+/target
+target/debug
+/target/debug
