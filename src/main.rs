@@ -1,7 +1,11 @@
 fn main() {
 
-    let speech = "hey sami";
-    // eprintln!(speech) -- you cant print it like this, it has to be a literal
-    println!("{}", speech) //correct way to print a string
 
+    let method = b"GET";
+    assert_eq!(method, &[b'G',b'E',b'T'])
+    /**
+    A string literal witht he b prefix is a byte string.
+    reference array of three bytes that equal the word GET
+    so we are asserting if each reference character equals GET
+    */
 }
