@@ -3,4 +3,4 @@
 /workspace.xml
 .iml
 .idea
-/target
+target/

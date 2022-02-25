@@ -1,9 +1,11 @@
 fn main() {
 
+    //operators == & !=
 
-    let var = "tesla";
-    println!("{}",var.len());
-    assert_eq!(var.len(),5);
-    println!("passed")
+    assert!("ONE".to_lowercase() == "one");
+    assert!("peanut".contains("nut"));
+    assert_eq!("   clean\n".trim(), "clean");
+    println!("pass");
+
 
 }
