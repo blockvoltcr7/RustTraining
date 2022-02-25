@@ -2,10 +2,20 @@ use std::mem;
 
 fn main() {
 
-    let d: char = 'x'; //32 bit unicode char
-    //this char takes up 32 bits as a unicode character
+   //arithmetic
 
-    println!("{} is a char, size = {} bytes",d, mem::size_of_val(&d));
+    let mut a = 2+3*4;
+
+    println!("{}", a);
+
+    a += 1;
+    println!("incremented = {}", a);
+
+    //rust does not support -- decrement ++ increment
+    // you must say a+1 or a-1 or a -= 1
+    //-= += *= /= &=
+
+
 
 
 }
