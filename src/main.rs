@@ -1,25 +1,42 @@
 
 
-struct Point {
-    x: f64,
-    y: f64
+use std::mem;
+enum Color {
+    RED,
+    GREEN,
+    BLUE,
+    RgbColor(u8,u8,u8), //tuple structure object
+    CmykColor{ //struct object that holds 4 u8 date type objects
+        cyan:u8,
+        magenta:u8,
+        yellow:u8,
+        black:u8
+    },
+
 }
 
-struct Line {
-    start: Point,
-    end: Point
-}
 
-fn structures(){
-    let p = Point {x: 3.0, y: 4.0};
-    println!("point p is at ({}, {})", p.x,p.y);
-    let p2 = Point {x: 5.0, y:10.0};
-    let myline = Line {start: p, end: p2};
+fn enums(){
+    let c = Color::CmykColor {cyan:0, magenta:128, yellow:0, black:255};
 
+    match c { //match is like a switch case statement
+        Color::RED => println!("red"),
+        Color::GREEN => println!("green"),
+        Color::BLUE => println!("blue"),
+        Color::RgbColor(0, 0, 0)
+        | Color::CmykColor {
+            cyan: _,
+            magenta: 128,
+            yellow: _,
+            black: 255,
+        } => println!("black"),
+        Color::RgbColor(r, g, b) => println!("rgb({},{},{}", r, g, b),
+        _ => (),
+
+    };
 }
 
 fn main() {
-
-    structures();
-
+    enums();
 }
+
