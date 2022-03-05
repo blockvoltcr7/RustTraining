@@ -1,23 +1,47 @@
-use std::collections::HashMap;
+use std::collections::HashSet;
 
 fn main() {
 
-    let mut shapes = HashMap::new();
-    shapes.insert(String::from("triangle"), 3);
-    shapes.insert(String::from("square"), 4);
 
-    println!("a square has {} sides", shapes["square".into()]);
+    let mut countries = HashSet::new();
 
-    for (key,value)  in &shapes {
+    //hashset only stores unique elements
+    countries.insert("morocco");
+    countries.insert("slovakia");
+    countries.insert("slovakia");
 
-        println!("{} : {}",key,value)
+    println!("{:?}", countries);
+
+    let added = countries.insert("brazil");
+
+    if added {
+        println!("{}", added);
     }
 
-    println!("{:?}", shapes);
+    //check if hashset has a value
 
-    //if cicle doesnt exist then add it to the hashmap
-    shapes.entry("cicle".into()).or_insert(1);
-    println!("{:?}", shapes);
+    if !countries.contains("brazil") {
+        println!("we dont have brazil");
+    }else{
+        println!("we do have brazil");
+
+    }
+
+
+    //remove an element from hashset
+    let removed = countries.remove("brazil");
+    if removed {
+        println!("we removed brazil")
+    }
+
+
+    let _1_5: HashSet<_> =  ( 1..=5).collect();
+    let _6_10: HashSet<_> =  ( 6..=10).collect();
+    let _1_10: HashSet<_> =  ( 1..=10).collect();
+    let _2_8: HashSet<_> =  ( 2..=8).collect();
+
+    //subset, every element is contain in the other set
+    println!("is {:?} a subset of {:?} ? {}", _2_8, _1_10, _2_8.is_subset(&_1_10))
 
 }
 
