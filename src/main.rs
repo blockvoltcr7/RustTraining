@@ -1,27 +1,23 @@
+use std::collections::HashMap;
 
 fn main() {
 
+    let mut shapes = HashMap::new();
+    shapes.insert(String::from("triangle"), 3);
+    shapes.insert(String::from("square"), 4);
 
-    vectors();
+    println!("a square has {} sides", shapes["square".into()]);
 
-}
+    for (key,value)  in &shapes {
 
-fn vectors(){
-
-    let mut a = Vec::new();
-    a.push(1);
-    a.push(2);
-    a.push(3);
-
-    println!("a = {:?}", a);
-    println!("a[0] = {:?}", a[0]);
-
-
-    for x in &a {
-        println!("{}",x)
+        println!("{} : {}",key,value)
     }
 
-    //remove
-    let last_elem = a.pop();
-    println!("{:?}",last_elem)
+    println!("{:?}", shapes);
+
+    //if cicle doesnt exist then add it to the hashmap
+    shapes.entry("cicle".into()).or_insert(1);
+    println!("{:?}", shapes);
+
 }
+
