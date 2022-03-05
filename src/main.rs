@@ -1,64 +1,27 @@
 
-
-/**
-tuples are a collection of different types
- Functions can use tuples to return multiple values, as tuples can hold any number of values.
-
-*/
-
-// The following struct is for the activity.
-#[derive(Debug)]
-struct Matrix(f32, f32, f32, f32);
-
 fn main() {
 
-    // A tuple with a bunch of different types
-    let long_tuple = (1u8, 2u16, 3u32, 4u64,
-                      -1i8, -2i16, -3i32, -4i64,
-                      0.1f32, 0.2f64,
-                      'a', true);
 
-    // Values can be extracted from the tuple using tuple indexing
-    println!("long tuple first value: {}", long_tuple.0);
-    println!("long tuple second value: {}", long_tuple.1);
-    println!("long tuple fourth value: {}", long_tuple.4);
+    vectors();
 
-    // Tuples can be tuple members
-    let tuple_of_tuples = ((1u8, 2u16, 2u32), (4u64, -1i8), -2i16);
-
-    // Tuples are printable
-    println!("tuple of tuples: {:?}", tuple_of_tuples);
-
-    // Tuples are printable
-    println!("tuple of tuples: {:?}", tuple_of_tuples);
-
-    // But long Tuples cannot be printed
-    // let too_long_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
-    // println!("too long tuple: {:?}", too_long_tuple);
-    // TODO ^ Uncomment the above 2 lines to see the compiler error
-
-    let pair = (1, true);
-    println!("pair is {:?}", pair);
-
-    println!("the reversed pair is {:?}", reverse(pair));
-
-    //tuples can be destructured to create bindings
-    let tuple = (1, "hello", 4.5, true);
-
-    let (a, b, c, d) = tuple;
-    println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);
-
-    let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
-    println!("{:?}", matrix);
 }
 
-// Tuples can be used as function arguments and as return values
-// multiple return values as a tuple.
-fn reverse(pair: (i32, bool)) -> (bool, i32) {
+fn vectors(){
 
-    // `let` can be used to bind the members of a tuple to variables
-    let (integer, boolean) = pair; //super cool, similar to golang
+    let mut a = Vec::new();
+    a.push(1);
+    a.push(2);
+    a.push(3);
 
-    (boolean, integer)
+    println!("a = {:?}", a);
+    println!("a[0] = {:?}", a[0]);
+
+
+    for x in &a {
+        println!("{}",x)
+    }
+
+    //remove
+    let last_elem = a.pop();
+    println!("{:?}",last_elem)
 }
-
