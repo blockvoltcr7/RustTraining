@@ -1,3 +1,23 @@
+# Ignore output directory
+/target
+
+# Ignore files created by the Rust toolchain
+**/*.rs.bk
+
+# Ignore files created by Cargo
+Cargo.lock
+
+# Ignore files created by rustfmt
+**/*.rs.bk
+
+# Ignore files created by various IDEs/editors
+/.idea
+*.iml
+*.swp
+*~
+.DS_Store
+.vscode/
+
 # Default ignored files
 /shelf/
 /workspace.xml
@@ -5,3 +25,4 @@
 .idea
 */target/*
 */target/**
+/target/**
