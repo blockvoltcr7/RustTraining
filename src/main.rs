@@ -49,6 +49,36 @@ fn process_string_and_bool(input: &str, flag: bool) -> bool {
 }
 
 
+// Function to print a string
+fn print_string(s: &String) {
+    println!("{}", s);
+}
+
+// Function to create and print a string slice from a string
+fn print_slice(s: &String, start: usize, end: usize) {
+    let s_slice: &str = &s[start..end];
+    println!("{}", s_slice);
+}
+
+// Function to print a string slice
+fn print_str(s: &str) {
+    println!("{}", s);
+}
+
+// Function to print the length of a string slice
+fn print_length(s: &str) {
+    println!("The length of '{}' is {}.", s, s.len());
+}
+
+fn main() {
+    let s = String::from("hello, world!");
+
+    print_string(&s);
+    print_slice(&s, 0, 5);
+    print_str("Hello, world!");
+    print_length("Hello, world!");
+}
+
 
 
 
